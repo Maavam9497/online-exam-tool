@@ -170,16 +170,17 @@
         body: JSON.stringify({ username, password })
       });
 
-      const data = await response.json();
-      if (response.ok) {
-        alert("Login successful!");
-        document.getElementById("login").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("exam-dashboard").style.display = "block";
-        document.getElementById("dashboard-message").innerText = `Hello, ${username}! Ready to take your exam?`;
-      } else {
-        alert(data.message || "Login failed.");
-      }
+      // TEMPORARY: Hardcoded credentials for testing
+        if (username === "student" && password === "1234") {
+          alert("Login successful!");
+          document.getElementById("login").style.display = "none";
+          document.getElementById("quiz").style.display = "none";
+          document.getElementById("exam-dashboard").style.display = "block";
+          document.getElementById("dashboard-message").innerText = `Hello, ${username}! Ready to take your exam?`;
+        } else {
+          alert("Invalid login. Try 'student' / '1234'");
+        }
+
     });
 
     function logout() {
