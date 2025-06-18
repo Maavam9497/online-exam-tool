@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Examination Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea, form button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Online Examination System</h1>
+    <nav>
+      <ul>
+        <li><a href="#registration">Register</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#exam-dashboard">Exams</a></li>
+        <li><a href="#admin-login">Admin</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Student Login Section -->
+  <section id="login">
+    <h2>Student Login</h2>
+    <form onsubmit="studentLogin(event)">
+      <input type="text" id="student-username" placeholder="Username" required />
+      <input type="password" id="student-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- The rest of the HTML remains the same -->
+
+  <footer>
+    <p>&copy; 2025 Online Examination Tool - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Basic Student Login Validation
+    function studentLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("student-username").value;
+      const password = document.getElementById("student-password").value;
+
+      if (username === "student" && password === "12345") {
+        alert("Login successful!");
+        window.location.href = "#exam-dashboard";
+      } else {
+        alert("Invalid username or password!");
+      }
+    }
+  </script>
+</body>
+</html>
